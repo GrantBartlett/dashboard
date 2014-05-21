@@ -1,0 +1,46 @@
+@import "../../packages/bower_components/bootstrap-sass-twbs/vendor/assets/stylesheets/bootstrap.scss";
+
+$brand-primary: #FF0010 !default;
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4a !default;
+$brand-danger: #d9534f !default;
+
+.ninja {
+  visibility: hidden;
+  display: block;
+}
+
+.random {
+  display: block;
+  background: #FC0;
+}
+
+.someink {
+  background: #FC0 !important;
+}
+
+.someink-else {
+  background: #0C0 !important;
+}
+
+.dash-icon {
+  font-size: 90px;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.dash-small h3 {
+  color: #fff;
+}
+
+.dash-small {
+  background: #00C0EF;
+}
+
+.dash-small p {
+  color: #fff;
+}
+
+.overview .fa {
+  opacity: .5;
+}
