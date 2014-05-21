@@ -3,8 +3,6 @@
 
 
 @section('content')
-
-
 <div class="container">
 
     <div class="row">
@@ -12,20 +10,16 @@
             <h1>Member count (iterative)</h1>
             <canvas id="myChart" width="1100" height="200"></canvas>
         </div>
-        <div class="col-md-12">
-            <h1>Member count (non-iterative)</h1>
-            <canvas id="myChart2" width="1100" height="200"></canvas>
-        </div>
     </div>
 
     <section class="overview row">
         <div class="col-md-4">
             <div class="panel panel-info">
                 <div class="panel-body alert-info">
-                    <div class="pull-left">
-                        <h2>356 Total Sign ups</h2>
+                    <div id="totalsignups" class="pull-left">
+                        <h2></h2>
 
-                        <p>In the last 24 hours</p>
+                        <p>Total Members</p>
                     </div>
                     <i class="fa fa-user fa-4x pull-right"></i>
                 </div>
