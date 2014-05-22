@@ -6576,41 +6576,134 @@ button.close {
     display: none !important;
   }
 }
-.ninja {
-  visibility: hidden;
-  display: block;
+/**
+  * Navbar styling
+**/
+.navbar-default {
+  background: #2f4354;
+  border-color: #2f4354;
+  border-radius: 0px;
+}
+.navbar-default .nav.navbar-nav .active a {
+  background: #2f4354;
+}
+.navbar-default .nav.navbar-nav li a {
+  color: #e4eef6;
+  background: #2f4354;
+}
+.navbar-default .nav.navbar-nav li a:hover {
+  color: white;
+}
+.navbar-default .navbar-brand {
+  color: #e4eef6;
+}
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+.navbar-default .navbar-toggle {
+  border-color: #2f4354;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #e4eef6;
+}
+.navbar-default .navbar-toggle:hover {
+  background: #1d2933;
+}
+.navbar-default .dropdown.open {
+  background: #2f4354;
+}
+.navbar-default .dropdown.open:hover {
+  background: #2f4354;
+}
+.navbar-default .dropdown.open a {
+  color: #e4eef6;
+}
+.navbar-default .dropdown.open a:focus {
+  color: #e4eef6;
+  background: #2f4354;
+}
+.navbar-default .dropdown-menu {
+  background: #2f4354;
 }
 
-.random {
-  display: block;
-  background: #FC0;
+/**
+  * General H4
+**/
+h4 {
+  font-weight: 300;
+  padding: 0 0 8px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.someink {
-  background: #FC0 !important;
+/**
+  * Report Block styling
+**/
+.app-block {
+  color: #2f4354;
+}
+.app-block h4 {
+  font-weight: 300;
+  padding: 0 0 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.app-block .icon-container {
+  background: #2f4354;
+}
+.app-block .stat {
+  display: inline-block;
+  color: #2f4354;
+  font-weight: 600;
+}
+.app-block .list-group-item.active {
+  background: #2f4354;
+  border-color: #2f4354;
+  padding: 18px;
+  font-size: 18px;
 }
 
-.someink-else {
-  background: #0C0 !important;
+.app-purple {
+  color: #512f54;
+}
+.app-purple .list-group-item.active {
+  background: #512f54;
+  border-color: #512f54;
+}
+.app-purple .icon-container {
+  background: #512f54;
+}
+.app-purple .stat {
+  color: #512f54;
 }
 
-.dash-icon {
-  font-size: 90px;
-  color: rgba(0, 0, 0, 0.15);
+.app-green {
+  color: #2f5433;
+}
+.app-green .list-group-item.active {
+  background: #2f5433;
+  border-color: #2f5433;
+}
+.app-green .icon-container {
+  background: #2f5433;
+}
+.app-green .stat {
+  color: #2f5433;
 }
 
-.dash-small h3 {
-  color: #fff;
+/**
+  * Report Graph styling
+**/
+#graphs {
+  background: #f1f4f7;
+  color: #415d75;
+  padding: 100px;
+}
+#graphs p {
+  font-size: 16px;
 }
 
-.dash-small {
-  background: #00C0EF;
+.graph-key .new-registered {
+  color: #2f4354;
 }
-
-.dash-small p {
-  color: #fff;
-}
-
-.overview .fa {
-  opacity: .5;
+.graph-key .total-registered {
+  color: #e4eef6;
 }

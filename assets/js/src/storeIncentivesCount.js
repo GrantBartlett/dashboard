@@ -22,6 +22,7 @@ var storeIncentivesCount = {
         return filtered_members.length;
     }
 
+
 //    getFacebookSignUps: function(members) {
 //        filtered_members = _.reject(members, function(member) {
 //            return member['facebook'] == 0;

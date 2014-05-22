@@ -1,46 +1,170 @@
 @import "../../packages/bower_components/bootstrap-sass-twbs/vendor/assets/stylesheets/bootstrap.scss";
 
-$brand-primary: #FF0010 !default;
+$brand-primary: #2f4354 !default;
 $brand-success: #5cb85c !default;
 $brand-info: #5bc0de !default;
 $brand-warning: #f0ad4a !default;
 $brand-danger: #d9534f !default;
 
-.ninja {
-  visibility: hidden;
-  display: block;
+
+$dark-blue: #2f4354 !default;
+$light-blue: #E4EEF6 !default;
+
+$dark-purple: #512F54 !default;
+
+$dark-green: #2F5433 !default;
+
+/**
+  * Navbar styling
+**/
+
+.navbar-default {
+  background: $dark-blue;
+  border-color: $dark-blue;
+  border-radius: 0px;
+
+  .nav.navbar-nav .active a {
+    background: $dark-blue;
+  }
+  .nav.navbar-nav li a {
+    color: $light-blue;
+    background: $dark-blue;
+    &:hover{
+      color: lighten($light-blue, 20%)
+    }
+  }
+  .navbar-brand {
+    color: $light-blue;
+    &:hover{
+      color: lighten($light-blue, 20%)
+    }
+  }
+
+  // Responsive toggle button
+  .navbar-toggle {
+    border-color: $dark-blue;
+    .icon-bar {
+      background-color: $light-blue;
+    }
+
+    &:hover {
+      background: darken($dark-blue, 10%);
+    }
+  }
+  .dropdown.open {
+    background: $dark-blue;
+
+    &:hover{
+      background: $dark-blue;
+    }
+    a {
+      color: $light-blue;
+    }
+    a:focus {
+      color: $light-blue;
+      background: $dark-blue;
+    }
+  }
+  .dropdown-menu {
+    background: $dark-blue;
+  }
 }
 
-.random {
-  display: block;
-  background: #FC0;
+
+
+
+
+/**
+  * General H4
+**/
+
+h4 {
+  font-weight: 300;
+  padding: 0 0 8px;
+  border-bottom: 1px solid rgb(240, 240, 240);
 }
 
-.someink {
-  background: #FC0 !important;
+
+
+/**
+  * Report Block styling
+**/
+
+.app-block {
+
+  h4 {
+    font-weight: 300;
+    padding: 0 0 8px;
+    border-bottom: 1px solid rgb(240, 240, 240);
+  }
+
+  .icon-container {
+    background: $dark-blue;
+  }
+
+  .stat {
+    display:inline-block;
+    color: $dark-blue;
+    font-weight: 600;
+  }
+
+  .list-group-item.active {
+    background: $dark-blue;
+    border-color: $dark-blue;
+    padding: 18px;
+    font-size: 18px;
+  }
+  color: $dark-blue;
 }
 
-.someink-else {
-  background: #0C0 !important;
+.app-purple {
+  .list-group-item.active {
+    background: $dark-purple;
+    border-color: $dark-purple;
+  }
+  .icon-container {
+    background: $dark-purple;
+  }
+  .stat {
+    color: $dark-purple;
+  }
+  color: $dark-purple;
+}
+.app-green {
+  .list-group-item.active {
+    background: $dark-green;
+    border-color: $dark-green;
+  }
+  .icon-container {
+    background: $dark-green;
+  }
+  .stat {
+    color: $dark-green;
+  }
+  color: $dark-green;
 }
 
-.dash-icon {
-  font-size: 90px;
-  color: rgba(0, 0, 0, 0.15);
+
+/**
+  * Report Graph styling
+**/
+
+#graphs {
+  background: lighten($dark-blue,70%);
+  color: lighten($dark-blue,10%);
+  padding: 100px;
+
+  p {
+    font-size: 16px;
+  }
 }
 
-.dash-small h3 {
-  color: #fff;
+.graph-key {
+  .new-registered {
+    color: $dark-blue;
+  }
+  .total-registered {
+    color: $light-blue;
+  }
 }
 
-.dash-small {
-  background: #00C0EF;
-}
-
-.dash-small p {
-  color: #fff;
-}
-
-.overview .fa {
-  opacity: .5;
-}

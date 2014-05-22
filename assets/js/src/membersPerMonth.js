@@ -48,7 +48,7 @@ var membersPerMonth = {
         });
 
         membersPerMonth.graphDatasets.push({
-            fillColor: "rgba(220,220,220,0.2)",
+            fillColor: "rgba(124,148,168,0.3)",
             strokeColor: "rgba(220,220,220,1)",
             pointColor: "rgba(220,220,220,1)",
             pointStrokeColor: "#fff",
@@ -66,7 +66,7 @@ var membersPerMonth = {
             dates.push(val.join_date);
         });
 
-        var now_time = 1400595890,
+        var now_time = 1400595890,totalsignups
             one_month = 2629743,
             min_date = _.min(dates),
             range_month = _.range(min_date, now_time, one_month);
@@ -100,8 +100,9 @@ var membersPerMonth = {
             graph_month_data_count.push(month[key]['count']);
         })
 
+        //rgb(47, 67, 84)
         membersPerMonth.graphDatasets.push({
-            fillColor: "rgba(220,220,220,0.2)",
+            fillColor: "rgba(47,67,84,0.95)",
             strokeColor: "rgba(220,220,220,1)",
             pointColor: "rgba(220,220,220,1)",
             pointStrokeColor: "#fff",

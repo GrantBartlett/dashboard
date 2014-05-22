@@ -8,36 +8,36 @@
 
     <!-- Bootstrap -->
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-
-    <!-- Chart dependencies -->
-    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
 </head>
 <body>
 @include('partials.navigation')
 
 @yield('content')
 </body>
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="http://underscorejs.org/underscore-min.js"></script>
 <script src="/assets/js/src/chart.min.js"></script>
 
-<!--<script src="/assets/js/src/get_members.js"></script>--><!--<script src="/assets/js/src/member_count.js"></script>--><!--<script src="/assets/js/src/member_groups.js"></script>--><!--<script src="/assets/js/src/dashboard.js"></script>-->
+
 <script src="/assets/js/src/get_members.js"></script>
 <script src="/assets/js/src/membersPerMonth.js"></script>
 <script src="/assets/js/src/membersCount.js"></script>
 
 <script src="/assets/js/src/storeIncentives.js"></script>
 <script src="/assets/js/src/storeIncentivesCount.js"></script>
+
+
 <script>
     $(function () {
+
         $.getJSON("http://sfmreport.api/api/v1/members", {format: "json"})
             .done(function (data) {
                 $.each(data, function (key, val) {
@@ -61,21 +61,32 @@
                 membersPerMonth.buildChart();
 
                 // Member count total
-                console.log("Total members: " + membersCount.countTotal($members));
-                console.log("POS members: " + membersCount.countPOS($members));
-                console.log("FG4 members: " + membersCount.countFG4($members));
-                console.log("Normal members: " + membersCount.countNormal($members));
+//                console.log("Total members: " + membersCount.countTotal($members));
+//                console.log("POS members: " + membersCount.countPOS($members));
+//                console.log("FG4 members: " + membersCount.countFG4($members));
+//                console.log("Normal members: " + membersCount.countNormal($members));
+//
+//                console.log("Non active POS members: " + membersCount.getNonActivePOS($members));
+//                console.log("Non active normal members: " + membersCount.getNonActiveNormal($members));
+//
+//                console.log("Percentage of non active normal members: " + (parseFloat(membersCount.getNonActiveNormal($members) / membersCount.countNormal($members)).toFixed(2) * 100) + "%");
+//                console.log("Percentage of non active POS members: " + (parseFloat(membersCount.getNonActivePOS($members) / membersCount.countPOS($members)).toFixed(2) * 100) + "%");
+//
+//                console.log("Facebook signups: " + membersCount.getFacebookSignUps($members));
+//                console.log("Facebook non-signups: " + membersCount.getNonFacebook($members));
 
-                console.log("Non active POS members: " + membersCount.getNonActivePOS($members));
-                console.log("Non active normal members: " + membersCount.getNonActiveNormal($members));
 
-                console.log("Percentage of non active normal members: " + (parseFloat(membersCount.getNonActiveNormal($members) / membersCount.countNormal($members)).toFixed(2) * 100) + "%");
-                console.log("Percentage of non active POS members: " + (parseFloat(membersCount.getNonActivePOS($members) / membersCount.countPOS($members)).toFixed(2) * 100) + "%");
 
-                console.log("Facebook signups: " + membersCount.getFacebookSignUps($members));
-                console.log("Facebook non-signups: " + membersCount.getNonFacebook($members));
+                // Member Stats
 
-                $("#totalsignups").children("h2").html(membersCount.countTotal($members));
+                $("#js_total_members").fadeIn(500).html(membersCount.countTotal($members));
+                $("#js_organic_percent_active").fadeIn(500).html((parseFloat(membersCount.getNonActiveNormal($members) / membersCount.countNormal($members)).toFixed(2) * 100) + "%");
+                $("#js_facebook_total_members").fadeIn(500).html(membersCount.getFacebookSignUps($members));
+
+                $("#js_pos_total_members").fadeIn(500).html(membersCount.countPOS($members));
+                $("#js_organic_total_members").fadeIn(500).html(membersCount.countNormal($members));
+                $("#js_pos_percent_active_members").fadeIn(500).html((parseFloat(membersCount.getNonActivePOS($members) / membersCount.countPOS($members)).toFixed(2) * 100) + "%");
+
 
             });
 
@@ -104,6 +115,13 @@
                 console.log("storeIncentives.countTotal: " + storeIncentivesCount.countTotal($storeIncentives));
                 console.log("getValidEmails: " + storeIncentivesCount.getValidEmails($storeIncentives));
                 console.log("getBogusEmails: " + storeIncentivesCount.getBogusEmails($storeIncentives));
+
+                // POS Breakdown
+                $("#js_pos_valid_emails").fadeIn(500).html(storeIncentivesCount.getValidEmails($storeIncentives));
+                $("#js_pos_bogus_emails").fadeIn(500).html(storeIncentivesCount.getBogusEmails($storeIncentives));
+
+                console.log($storeIncentives);
+
 
             })
     });
