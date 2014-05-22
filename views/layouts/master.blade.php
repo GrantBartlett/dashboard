@@ -122,6 +122,12 @@
 
                 console.log($storeIncentives);
 
+                storeIncentivesCount.getStaff($storeIncentives, "valid");
+                storeIncentivesCount.getStaff($storeIncentives, "bogus");
+                storeIncentivesCount.countGender($storeIncentives);
+                storeIncentivesCount.countMalls($storeIncentives);
+                storeIncentivesCount.countBrands($storeIncentives);
+
 
             })
     });
