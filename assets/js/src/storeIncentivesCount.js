@@ -64,7 +64,18 @@ var storeIncentivesCount = {
         console.log("Males: " + genderCount.Male.length);
     },
 
-    countMalls: function (members) {
+
+
+
+    /**
+     *
+     * Count Top Mall Sign-ups
+     * @return members,mallId
+     *
+     */
+
+    countMalls: function (members, mallId) {
+
         mallCount = _.groupBy(members, 'mall');
 
         mallCountNums = _.map(mallCount, function (val, key) {
@@ -78,18 +89,34 @@ var storeIncentivesCount = {
         sortedMallCount = _.sortBy(mallCountNums, function (o) {
             return o.signups
         });
-        // console.log(sortedMallCount);
 
         // Reverse sorted staff (most at idx 0)
         sortedMallCountRev = sortedMallCount.reverse();
-        // console.log(sortedMallCountRev);
-        console.log("The top 3 malls...");
-        console.log("At 1: " + sortedMallCountRev[0].mall_name + " with " + sortedMallCountRev[0].signups + " signups.");
-        console.log("At 2: " + sortedMallCountRev[1].mall_name + " with " + sortedMallCountRev[1].signups + " signups.");
-        console.log("At 3: " + sortedMallCountRev[2].mall_name + " with " + sortedMallCountRev[2].signups + " signups.");
+
+        var output = [];
+
+        for (var i = 0; i < sortedMallCountRev.length; ++i) {
+            output.push(sortedMallCountRev[i]);
+        }
+
+        console.log(output[mallId]['mall_name'],output[mallId]['signups']);
+        return [
+            output[mallId]['mall_name'] + " with ",
+            output[mallId]['signups'] + " sign-ups"
+        ];
     },
 
-    countBrands: function (members) {
+
+
+
+    /**
+     *
+     * Count Top Brand Sign-ups
+     * @return members, brandId
+     *
+     */
+
+    countBrands: function (members, brandId) {
         brandCount = _.groupBy(members, 'brand');
 
         brandCountNums = _.map(brandCount, function (val, key) {
@@ -108,10 +135,24 @@ var storeIncentivesCount = {
         // Reverse sorted staff (most at idx 0)
         sortedBrandCountRev = sortedBrandCount.reverse();
         // console.log(brandCount);
-        console.log("The top 3 malls...");
-        console.log("At 1: " + sortedBrandCountRev[0].brand_name + " with " + sortedBrandCountRev[0].signups + " signups.");
-        console.log("At 2: " + sortedBrandCountRev[1].brand_name + " with " + sortedBrandCountRev[1].signups + " signups.");
-        console.log("At 3: " + sortedBrandCountRev[2].brand_name + " with " + sortedBrandCountRev[2].signups + " signups.");
+//        console.log("The top 3 malls...");
+//        console.log("At 1: " + sortedBrandCountRev[0].brand_name + " with " + sortedBrandCountRev[0].signups + " signups.");
+//        console.log("At 2: " + sortedBrandCountRev[1].brand_name + " with " + sortedBrandCountRev[1].signups + " signups.");
+//        console.log("At 3: " + sortedBrandCountRev[2].brand_name + " with " + sortedBrandCountRev[2].signups + " signups.");
+
+
+        var output = [];
+
+        for (var i = 0; i < sortedBrandCountRev.length; ++i) {
+            output.push(sortedBrandCountRev[i]);
+        }
+
+        console.log(output[brandId]['brand_name'],output[brandId]['signups']);
+        return [
+            output[brandId]['brand_name'] + " with ",
+            output[brandId]['signups'] + " sign-ups"
+        ];
+
     }
 
 }

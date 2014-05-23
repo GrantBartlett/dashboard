@@ -112,21 +112,35 @@
 
                 var $storeIncentives = storeIncentives.storeMembers;
 
-                console.log("storeIncentives.countTotal: " + storeIncentivesCount.countTotal($storeIncentives));
-                console.log("getValidEmails: " + storeIncentivesCount.getValidEmails($storeIncentives));
-                console.log("getBogusEmails: " + storeIncentivesCount.getBogusEmails($storeIncentives));
+//                console.log("storeIncentives.countTotal: " + storeIncentivesCount.countTotal($storeIncentives));
+//                console.log("getValidEmails: " + storeIncentivesCount.getValidEmails($storeIncentives));
+//                console.log("getBogusEmails: " + storeIncentivesCount.getBogusEmails($storeIncentives));
 
                 // POS Breakdown
                 $("#js_pos_valid_emails").fadeIn(500).html(storeIncentivesCount.getValidEmails($storeIncentives));
                 $("#js_pos_bogus_emails").fadeIn(500).html(storeIncentivesCount.getBogusEmails($storeIncentives));
 
-                console.log($storeIncentives);
+                // POS Top 5 Mall Sign-ups
+                $("#js_pos_top_malls_1").fadeIn(500).html(storeIncentivesCount.countMalls($storeIncentives,"0"));
+                $("#js_pos_top_malls_2").fadeIn(500).html(storeIncentivesCount.countMalls($storeIncentives,"1"));
+                $("#js_pos_top_malls_3").fadeIn(500).html(storeIncentivesCount.countMalls($storeIncentives,"2"));
+                $("#js_pos_top_malls_4").fadeIn(500).html(storeIncentivesCount.countMalls($storeIncentives,"3"));
+                $("#js_pos_top_malls_5").fadeIn(500).html(storeIncentivesCount.countMalls($storeIncentives,"4"));
 
-                storeIncentivesCount.getStaff($storeIncentives, "valid");
-                storeIncentivesCount.getStaff($storeIncentives, "bogus");
-                storeIncentivesCount.countGender($storeIncentives);
-                storeIncentivesCount.countMalls($storeIncentives);
-                storeIncentivesCount.countBrands($storeIncentives);
+                // POS Top 5 Brand Sign-ups
+                $("#js_pos_top_brands_1").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"0"));
+                $("#js_pos_top_brands_2").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"1"));
+                $("#js_pos_top_brands_3").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"2"));
+                $("#js_pos_top_brands_4").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"3"));
+                $("#js_pos_top_brands_5").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"4"));
+
+
+//                storeIncentivesCount.getStaff($storeIncentives, "valid");
+//                storeIncentivesCount.getStaff($storeIncentives, "bogus");
+//                storeIncentivesCount.countGender($storeIncentives);
+
+
+//                storeIncentivesCount.countBrands($storeIncentives);
 
 
             })
