@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="alert alert-info alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <strong>Welcome!</strong>
+                <strong>Welcome! </strong>
 
                 <p>Please note: POS Results are based on data recorded since 12th of May 2014</p>
             </div>
