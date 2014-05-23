@@ -58,7 +58,7 @@
 
 		chart.render();
 
-        $.getJSON("http://sfmreport.api/api/v1/members", {format: "json"})
+        $.getJSON("/assets/js/json/members.json", {format: "json"})
             .done(function (data) {
                 $.each(data, function (key, val) {
                     getMembers.members.push({
@@ -80,25 +80,7 @@
                 membersPerMonth.membersPerMonthNonIt($members);
                 membersPerMonth.buildChart();
 
-                // Member count total
-//                console.log("Total members: " + membersCount.countTotal($members));
-//                console.log("POS members: " + membersCount.countPOS($members));
-//                console.log("FG4 members: " + membersCount.countFG4($members));
-//                console.log("Normal members: " + membersCount.countNormal($members));
-//
-//                console.log("Non active POS members: " + membersCount.getNonActivePOS($members));
-//                console.log("Non active normal members: " + membersCount.getNonActiveNormal($members));
-//
-//                console.log("Percentage of non active normal members: " + (parseFloat(membersCount.getNonActiveNormal($members) / membersCount.countNormal($members)).toFixed(2) * 100) + "%");
-//                console.log("Percentage of non active POS members: " + (parseFloat(membersCount.getNonActivePOS($members) / membersCount.countPOS($members)).toFixed(2) * 100) + "%");
-//
-//                console.log("Facebook signups: " + membersCount.getFacebookSignUps($members));
-//                console.log("Facebook non-signups: " + membersCount.getNonFacebook($members));
-
-
-
                 // Member Stats
-
                 $("#js_total_members").fadeIn(500).html(membersCount.countTotal($members));
                 $("#js_organic_percent_active").fadeIn(500).html((parseFloat(membersCount.getNonActiveNormal($members) / membersCount.countNormal($members)).toFixed(2) * 100) + "%");
                 $("#js_facebook_total_members").fadeIn(500).html(membersCount.getFacebookSignUps($members));
@@ -110,7 +92,7 @@
 
             });
 
-        $.getJSON("http://sfmreport.api/api/v1/incentive", {format: "json"})
+        $.getJSON("/assets/js/json/incentive.json", {format: "json"})
             .done(function (data) {
                 $.each(data, function (key, val) {
                     storeIncentives.storeMembers.push({
@@ -131,10 +113,6 @@
                 })
 
                 var $storeIncentives = storeIncentives.storeMembers;
-
-//                console.log("storeIncentives.countTotal: " + storeIncentivesCount.countTotal($storeIncentives));
-//                console.log("getValidEmails: " + storeIncentivesCount.getValidEmails($storeIncentives));
-//                console.log("getBogusEmails: " + storeIncentivesCount.getBogusEmails($storeIncentives));
 
                 // POS Breakdown
                 $("#js_pos_valid_emails").fadeIn(500).html(storeIncentivesCount.getValidEmails($storeIncentives));
@@ -161,14 +139,6 @@
                 $("#js_pos_top_staff_3").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "2", "valid"));
                 $("#js_pos_top_staff_4").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "3", "valid"));
                 $("#js_pos_top_staff_5").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "4", "valid"));
-
-
-//                storeIncentivesCount.getStaff($storeIncentives, "bogus");
-                storeIncentivesCount.countGender($storeIncentives, "male");
-
-
-//                storeIncentivesCount.countBrands($storeIncentives);
-
 
             })
     });
