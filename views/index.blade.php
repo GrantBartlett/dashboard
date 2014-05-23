@@ -9,7 +9,9 @@
         <div class="col-md-12">
             <div class="alert alert-info alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <strong>Welcome!</strong> I'm Betty, the SFM Dashboard Queen. I'm still being configured, so come back daily!
+                <strong>Welcome!</strong>
+
+                <p>Please note: POS Results are based on data recorded since 12th of May 2014</p>
             </div>
 
             <h4>Quickfire stats</h4>
@@ -61,10 +63,29 @@
                     <li class="list-group-item active text-center">
                         <i class="fa fa-trophy"></i> Competitions <span id="js_total_members"></span>
                     </li>
+
                     <li class="list-group-item text-center">
                         <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
-                        Total Number Signups
-                        <div class="stat pull-right" id="js_facebook_total_members" style="display: none;"></div>
+                        Michael Kors Watch
+                        <div class="stat pull-right">560 entered</div>
+                    </li>
+
+                    <li class="list-group-item text-center">
+                        <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
+                        iPod Nano
+                        <div class="stat pull-right">317 entered</div>
+                    </li>
+
+                    <li class="list-group-item text-center">
+                        <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
+                        GHD Straighteners
+                        <div class="stat pull-right">110 entered</div>
+                    </li>
+
+                    <li class="list-group-item text-center">
+                        <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
+                        Beats by Dre
+                        <div class="stat pull-right">107 entered</div>
                     </li>
                 </ul>
             </div>
@@ -75,6 +96,7 @@
 
             <div class="app-block app-green">
                 <ul class="list-group">
+
                     <li class="list-group-item active text-center">
                         <i class="fa fa-shopping-cart"></i> POS <span id="js_total_members"></span>
                     </li>
@@ -113,6 +135,37 @@
 
 </div>
 
+<section id="graphs">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-lg-6 pull-left">
+                <h1> New Member Registration</h1>
+
+                <p>An iterative graph detailing new members and total members.</p>
+
+                <br>
+                <ul class="graph-key list-inline">
+                    <li>
+                        <i class="fa fa-circle new-registered"></i>
+                        <small>New Members Registered</small>
+                    </li>
+                    <li>
+                        <i class="fa fa-circle total-registered"></i>
+                        <small>Total Members Registered</small>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-12 col-lg-6 pull-right">
+                <div class="app-block app-green">
+                    <canvas id="myChart" width="600" height="250"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <section id="pos-breakdown">
     <div class="container">
@@ -120,23 +173,42 @@
         <div class="row">
             <div class="col-md-4">
 
-                <h4>POS Breakdown</h4>
-
-                <p>Data recorded since 12th May 2014</p>
-
                 <div class="app-block">
                     <ul class="list-group">
-
-
+                        <li class="list-group-item active text-center">
+                            <i class="fa fa-user"></i> Top 5 Valid Staff Sign-ups
+                        </li>
+                        <li class="list-group-item text-center clearfix">
+                            <div class="icon-container label label-primary pull-left">#1</div>
+                            <div class="stat" id="js_pos_top_staff_1" style="display: none;"></div>
+                        </li>
+                        <li class="list-group-item text-center clearfix">
+                            <div class="icon-container label label-primary pull-left">#2</div>
+                            <div class="stat" id="js_pos_top_staff_2" style="display: none;"></div>
+                        </li>
+                        <li class="list-group-item text-center clearfix">
+                            <div class="icon-container label label-primary pull-left">#3</div>
+                            <div class="stat" id="js_pos_top_staff_3" style="display: none;"></div>
+                        </li>
+                        <li class="list-group-item text-center clearfix">
+                            <div class="icon-container label label-primary pull-left">#4</div>
+                            <div class="stat" id="js_pos_top_staff_4" style="display: none;"></div>
+                        </li>
+                        <li class="list-group-item text-center clearfix">
+                            <div class="icon-container label label-primary pull-left">#5</div>
+                            <div class="stat" id="js_pos_top_staff_5" style="display: none;"></div>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <h4>Top 5 Mall Sign-ups</h4>
-
                 <div class="app-block">
                     <ul class="list-group">
+                        <li class="list-group-item active text-center">
+                            <i class="fa fa-user"></i> Top 5 Mall Sign-ups
+                        </li>
+
                         <li class="list-group-item text-center clearfix">
                             <div class="icon-container label label-primary pull-left">#1</div>
                             <div class="stat" id="js_pos_top_malls_1" style="display: none;"></div>
@@ -166,10 +238,13 @@
             </div>
 
             <div class="col-md-4">
-                <h4>Top 5 Mall Sign-ups</h4>
 
                 <div class="app-block">
                     <ul class="list-group">
+                        <li class="list-group-item active text-center">
+                            <i class="fa fa-user"></i> Top 5 Brand Sign-ups
+                        </li>
+
                         <li class="list-group-item text-center clearfix">
                             <div class="icon-container label label-primary pull-left">#1</div>
                             <div class="stat" id="js_pos_top_brands_1" style="display: none;"></div>
@@ -197,8 +272,6 @@
                     </ul>
                 </div>
             </div>
-
-
         </div>
 
     </div>
@@ -209,31 +282,21 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-6">
-                <h1> New Member Registration</h1>
 
-                <p>An iterative graph detailing new members and total members.</p>
-
-                <br>
-                <ul class="graph-key list-inline">
-                    <li>
-                        <i class="fa fa-circle new-registered"></i>
-                        <small>New Members Registered</small>
-                    </li>
-                    <li>
-                        <i class="fa fa-circle total-registered"></i>
-                        <small>Total Members Registered</small>
-                    </li>
-                </ul>
+            <div class="col-md-12 col-lg-4 pull-right">
+                <h1>Sign-ups by Page</h1>
+                <p>Data recorded since 12th of May 2014</p>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-12 col-lg-8 pull-left">
                 <div class="app-block app-green">
-                    <canvas id="myChart" width="600" height="250"></canvas>
+                    <div id="js_donutchart" style="height: 300px; width: 100%;"></div>
                 </div>
             </div>
 
+
         </div>
+
     </div>
 </section>
 

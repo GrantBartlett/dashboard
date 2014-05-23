@@ -6577,6 +6577,28 @@ button.close {
   }
 }
 /**
+  * CanvasJS Copyright
+**/
+a.canvasjs-chart-credit {
+  display: none;
+}
+
+/**
+  * Chart styling
+**/
+#js_donutchart canvas {
+  background: none !important;
+}
+
+/**
+  * Section styling
+**/
+section {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/**
   * Navbar styling
 **/
 .navbar-default {

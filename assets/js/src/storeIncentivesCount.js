@@ -1,11 +1,3 @@
-/**
- * Created by grantbartlett on 21/05/2014.
- */
-
-/**
- * Created by grantbartlett on 21/05/2014.
- */
-
 var storeIncentivesCount = {
 
     // Split data into bogus and vaild lists
@@ -30,7 +22,15 @@ var storeIncentivesCount = {
         return filtered_members.length;
     },
 
-    getStaff: function (members, status) {
+
+    /**
+     *
+     * Get Valid/Invalid Staff Entry
+     * @return members, id in array, status
+     *
+     */
+
+    getStaff: function (members, result, status) {
 
         // Get top staff doing valid data
         var staff = _.groupBy(_.where(members, {"status": status}), 'staff_id');
@@ -45,26 +45,38 @@ var storeIncentivesCount = {
         var sortedStaff = _.sortBy(staffNums, function (o) {
             return o.signups
         });
-        // console.log(sortedTopStaff);
 
         // Reverse sorted staff (most at idx 0)
         var sortedStaffRev = sortedStaff.reverse();
-        // console.log(sortedTopStaffRev);
 
-        console.log("The top 3 staff inputting " + status + " data are...");
-        console.log("At 1... " + sortedStaffRev[0].staff_id + " with " + sortedStaffRev[0].signups + " signups.");
-        console.log("At 2... " + sortedStaffRev[1].staff_id + " with " + sortedStaffRev[1].signups + " signups.");
-        console.log("At 3... " + sortedStaffRev[2].staff_id + " with " + sortedStaffRev[2].signups + " signups.");
+        var output = [];
+        for (var i = 0; i < sortedStaffRev.length; ++i) {
+            output.push(sortedStaffRev[i]);
+        }
+
+        return [
+            "Staff ID " + output[result]['staff_id'] + " with ",
+            output[result]['signups'] + " " + status
+        ];
     },
 
-    countGender: function (members) {
+
+    /**
+     *
+     * Count Gender of Mall Sign-ups
+     * @return members,gender
+     *
+     */
+
+    countGender: function (members, gender) {
         genderCount = _.groupBy(members, 'gender');
-        // console.log(genderCount);
-        console.log("Females: " + genderCount.Female.length);
-        console.log("Males: " + genderCount.Male.length);
+
+//        console.log("Females: " + genderCount.Female.length);
+//        console.log("Males: " + genderCount.Male.length);
+
+
+        return genderCount.gender;
     },
-
-
 
 
     /**
@@ -76,7 +88,7 @@ var storeIncentivesCount = {
 
     countMalls: function (members, mallId) {
 
-        mallCount = _.groupBy(members, 'mall');
+        var mallCount = _.groupBy(members, 'mall');
 
         mallCountNums = _.map(mallCount, function (val, key) {
             return {
@@ -99,14 +111,12 @@ var storeIncentivesCount = {
             output.push(sortedMallCountRev[i]);
         }
 
-        console.log(output[mallId]['mall_name'],output[mallId]['signups']);
+        console.log(output[mallId]['mall_name'], output[mallId]['signups']);
         return [
             output[mallId]['mall_name'] + " with ",
             output[mallId]['signups'] + " sign-ups"
         ];
     },
-
-
 
 
     /**
@@ -130,29 +140,20 @@ var storeIncentivesCount = {
         sortedBrandCount = _.sortBy(brandCountNums, function (o) {
             return o.signups
         });
-        // console.log(sortedMallCount);
 
         // Reverse sorted staff (most at idx 0)
         sortedBrandCountRev = sortedBrandCount.reverse();
-        // console.log(brandCount);
-//        console.log("The top 3 malls...");
-//        console.log("At 1: " + sortedBrandCountRev[0].brand_name + " with " + sortedBrandCountRev[0].signups + " signups.");
-//        console.log("At 2: " + sortedBrandCountRev[1].brand_name + " with " + sortedBrandCountRev[1].signups + " signups.");
-//        console.log("At 3: " + sortedBrandCountRev[2].brand_name + " with " + sortedBrandCountRev[2].signups + " signups.");
-
 
         var output = [];
-
         for (var i = 0; i < sortedBrandCountRev.length; ++i) {
             output.push(sortedBrandCountRev[i]);
         }
 
-        console.log(output[brandId]['brand_name'],output[brandId]['signups']);
+        console.log(output[brandId]['brand_name'], output[brandId]['signups']);
         return [
             output[brandId]['brand_name'] + " with ",
             output[brandId]['signups'] + " sign-ups"
         ];
-
     }
 
 }

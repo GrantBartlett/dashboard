@@ -25,7 +25,7 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="http://underscorejs.org/underscore-min.js"></script>
 <script src="/assets/js/src/chart.min.js"></script>
-
+<script src="/assets/js/src/canvasjs.js"></script>
 
 <script src="/assets/js/src/get_members.js"></script>
 <script src="/assets/js/src/membersPerMonth.js"></script>
@@ -37,6 +37,26 @@
 
 <script>
     $(function () {
+
+        var chart = new CanvasJS.Chart("js_donutchart",
+		{
+			data: [
+			{
+				type: "doughnut",
+				startAngle:20,
+				dataPoints: [
+				{  y: 150, label: "iPod Nano Competition" },
+				{  y: 15, label: "Michael Kors Watch Competition" },
+				{  y: 12, label: "Saudi Fashion Magazine Registration" },
+				{  y: 10,  label: "Beats by Dre Headphones"},
+				{  y: 10,  label: "GHD Straighteners Competition"}
+
+				]
+			}
+			]
+		});
+
+		chart.render();
 
         $.getJSON("http://sfmreport.api/api/v1/members", {format: "json"})
             .done(function (data) {
@@ -135,9 +155,16 @@
                 $("#js_pos_top_brands_5").fadeIn(500).html(storeIncentivesCount.countBrands($storeIncentives,"4"));
 
 
-//                storeIncentivesCount.getStaff($storeIncentives, "valid");
+                // POS Top 5 Staff Valid Sign-ups
+                $("#js_pos_top_staff_1").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "0", "valid"));
+                $("#js_pos_top_staff_2").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "1", "valid"));
+                $("#js_pos_top_staff_3").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "2", "valid"));
+                $("#js_pos_top_staff_4").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "3", "valid"));
+                $("#js_pos_top_staff_5").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "4", "valid"));
+
+
 //                storeIncentivesCount.getStaff($storeIncentives, "bogus");
-//                storeIncentivesCount.countGender($storeIncentives);
+                storeIncentivesCount.countGender($storeIncentives, "male");
 
 
 //                storeIncentivesCount.countBrands($storeIncentives);
