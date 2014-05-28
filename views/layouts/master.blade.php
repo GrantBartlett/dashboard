@@ -45,11 +45,11 @@
 				type: "doughnut",
 				startAngle:20,
 				dataPoints: [
-				{  y: 150, label: "iPod Nano Competition" },
-				{  y: 15, label: "Michael Kors Watch Competition" },
-				{  y: 12, label: "Saudi Fashion Magazine Registration" },
-				{  y: 10,  label: "Beats by Dre Headphones"},
-				{  y: 10,  label: "GHD Straighteners Competition"}
+				{  y: 153, label: "iPod Nano Competition" },
+				{  y: 20, label: "Michael Kors Watch Competition" },
+				{  y: 21, label: "Saudi Fashion Magazine Registration" },
+				{  y: 14,  label: "Beats by Dre Headphones"},
+				{  y: 29,  label: "GHD Straighteners Competition"}
 
 				]
 			}
@@ -140,7 +140,7 @@
                 $("#js_pos_top_staff_4").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "3", "valid"));
                 $("#js_pos_top_staff_5").fadeIn(500).html(storeIncentivesCount.getStaff($storeIncentives, "4", "valid"));
 
-            })
+            });
     });
 </script>
 </html>

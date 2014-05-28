@@ -67,25 +67,25 @@
                     <li class="list-group-item text-center">
                         <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
                         Michael Kors Watch
-                        <div class="stat pull-right">560 entered</div>
+                        <div class="stat pull-right">609 entered</div>
                     </li>
 
                     <li class="list-group-item text-center">
                         <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
                         iPod Nano
-                        <div class="stat pull-right">317 entered</div>
+                        <div class="stat pull-right">361 entered</div>
                     </li>
 
                     <li class="list-group-item text-center">
                         <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
                         GHD Straighteners
-                        <div class="stat pull-right">110 entered</div>
+                        <div class="stat pull-right">172 entered</div>
                     </li>
 
                     <li class="list-group-item text-center">
                         <div class="icon-container label label-primary pull-left"><i class="fa fa-user fa-fw"></i></div>
                         Beats by Dre
-                        <div class="stat pull-right">107 entered</div>
+                        <div class="stat pull-right">157 entered</div>
                     </li>
                 </ul>
             </div>

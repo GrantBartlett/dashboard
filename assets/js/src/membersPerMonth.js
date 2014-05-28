@@ -66,7 +66,7 @@ var membersPerMonth = {
             dates.push(val.join_date);
         });
 
-        var now_time = 1400595890,totalsignups
+        var now_time = 1401265532,totalsignups
             one_month = 2629743,
             min_date = _.min(dates),
             range_month = _.range(min_date, now_time, one_month);
