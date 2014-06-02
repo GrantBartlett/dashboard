@@ -1,4 +1,4 @@
-Saudi Fashion Magazine API
+Saudi Fashion Magazine API - V1
 =========
 
 
