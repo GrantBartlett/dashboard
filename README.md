@@ -8,7 +8,7 @@ To fetch a request, the following parameters are available:
 
 
 Type | Parameter | Example
------------- | -------------
+------------ | ------------- | -------------
 sort_by= | table_name | /api/v1/users/sort_by=
 sort | asc/desc | /api/v1/users/sort_by=&sort=
 limit | int | /api/v1/users/sort_by=&sort=&limit=
