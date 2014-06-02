@@ -2,7 +2,6 @@ Saudi Fashion Magazine API - V1
 =========
 
 
-# This is an <h1> tag
 ## Get requests /api/v1/users
 To fetch a request from the API, the following parameters are available:
 
