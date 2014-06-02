@@ -1,11 +1,10 @@
-Dashboard
+Saudi Fashion Magazine API
 =========
 
 
 # This is an <h1> tag
 ## Get requests /api/v1/users
-To fetch a request, the following parameters are available:
-
+To fetch a request from the API, the following parameters are available:
 
 Type | Parameter | Example
 ------------ | ------------- | -------------
@@ -16,4 +15,3 @@ gid | group_id | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=
 min_date | min timestamp | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=<b>5</b>&gid=<b>8</b>&min_date=<b>1370513563</b>
 max_date | max timestamp | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=<b>5</b>&gid=<b>8</b>&min_date=<b>1370513563</b>&max_date=<b>1401455449</b>
 
-#### Get requests /api/v1/users
