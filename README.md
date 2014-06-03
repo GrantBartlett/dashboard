@@ -18,5 +18,5 @@ max_date | max timestamp | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc<
 PHP Artisan Commands
 =========
 
-php artisan migrate
-php artisan db:seed
+1). php artisan migrate
+2). php artisan db:seed
