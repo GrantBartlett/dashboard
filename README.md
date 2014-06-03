@@ -14,3 +14,8 @@ gid | group_id | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=
 min_date | min timestamp | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=<b>5</b>&gid=<b>8</b>&min_date=<b>1370513563</b>
 max_date | max timestamp | /api/v1/users/sort_by=<b>table_name</b>&sort=<b>desc</b>&limit=<b>5</b>&gid=<b>8</b>&min_date=<b>1370513563</b>&max_date=<b>1401455449</b>
 
+
+Saudi Fashion Magazine API - V1
+=========
+
+php artisan db:seed
