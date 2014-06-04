@@ -10,7 +10,7 @@ Type | Parameter | Example
 table_name | param=&by= | param=location&by=Farnham
 group_id | gid= | gid=8
 timestamp | monthmin=&monthmax= | monthmin=-12&monthmax=-1
-asc/desc | sort=desc&bysortby=last_activity
+asc/desc | sort=&bysortby= |sort=desc&bysortby=last_activity
 
 
 
