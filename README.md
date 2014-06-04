@@ -1,6 +1,9 @@
 Saudi Fashion Magazine API - V1
 =========
 
+## New
+
+http://sfmreport.api/api/v1/users?monthmin=-12&monthmax=-11
 
 ## Get requests /api/v1/users
 To fetch a request from the API, the following parameters are available:
