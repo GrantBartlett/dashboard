@@ -8,6 +8,11 @@ http://sfmreport.api/api/v1/users?monthmin=-12&monthmax=-11
 Type | Parameter | Example
 ------------ | ------------- | -------------
 table_name | param=&by= | param=location&by=Farnham
+group_id | gid= | gid=8
+timestamp | monthmin=&monthmax= | monthmin=-12&monthmax=-1
+asc/desc | sort=desc&bysortby=last_activity
+
+
 
 ## Get requests /api/v1/users
 To fetch a request from the API, the following parameters are available:
